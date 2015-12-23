@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::resource('property', 'PropertiesController');
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +24,8 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/', 'AdminController@index');
 });
