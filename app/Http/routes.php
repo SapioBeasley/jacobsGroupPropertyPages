@@ -11,7 +11,10 @@
 |
 */
 
-Route::resource('property', 'PropertiesController');
+// Route::get('/property/{addressSlug}', [
+// 	'as' => 'property.show',
+// 	'uses' => 'PropertiesController@show'
+// ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +28,67 @@ Route::resource('property', 'PropertiesController');
 */
 
 Route::group(['middleware' => 'web'], function () {
-    Route::auth();
+	Route::get('/property/{addressSlug}', [
+	'as' => 'property.show',
+	'uses' => 'PropertiesController@show'
+]);
 
-    Route::get('/', 'AdminController@index');
+	Route::auth();
+
+	Route::get('/', [
+		'as' => 'index',
+		'uses' => 'AdminController@index'
+	]);
+
+
+
+
+
+
+
+
+
+	Route::get('/admin/property/create', [
+		'as' => 'property.create',
+		'uses' => 'AdminController@propertyCreate'
+	]);
+
+	Route::get('/admin/property/edit/{id}', [
+		'as' => 'property.edit',
+		'uses' => 'AdminController@propertyEdit'
+	]);
+
+	Route::post('/admin/property/store', [
+		'as' => 'property.store',
+		'uses' => 'AdminController@propertyStore'
+	]);
+
+	Route::put('/admin/property/update/{id}', [
+		'as' => 'property.update',
+		'uses' => 'AdminController@propertyUpdate'
+	]);
+
+	Route::delete('/admin/property/destroy/{id}', [
+		'as' => 'property.destroy',
+		'uses' => 'AdminController@propertyDestroy'
+	]);
+
+	Route::post('/upload', 'AdminController@upload');
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Route::post('/inquire/{address}', [
+		'as' => 'inquire',
+		'uses' => 'PropertiesController@inquire',
+	]);
 });

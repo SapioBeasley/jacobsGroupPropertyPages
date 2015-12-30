@@ -5,7 +5,7 @@
 		<div class="col-sm-12 titlebar">
 
 			<h3>Property Details</h3>
-			<p>Sagittis an accumsan convallis, lectus ultrices feugiat </p>
+			<p>{{$property['streetAddress']}} {{$property['city']}} {{$property['state']}} {{$property['zipcode']}}</p>
 
 		</div>
 	</div>

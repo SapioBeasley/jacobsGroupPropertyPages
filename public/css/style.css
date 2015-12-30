@@ -277,7 +277,7 @@ a:focus {
 
 #intro {
 	width: 100%;
-	background-image: url(../img/thumbs/intro-bkg.jpg);
+	/*background-image: url(../img/thumbs/intro-bkg.jpg);*/
 	background-attachment: fixed !important;
 	background-repeat: no-repeat;
 	background-position: center center;

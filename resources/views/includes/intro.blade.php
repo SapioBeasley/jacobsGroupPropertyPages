@@ -4,8 +4,8 @@
 		<!-- INTRO TEXT -->
 		<div class="col-md-7 intro_text">
 
-			<h2>210 Quest Park St <br>
-			<span>Henderson NV.</span> 89074</h2>
+			<h2>{{$property['streetAddress']}}<br>
+			<span>{{$property['city']}} {{$property['state']}}</span> {{$property['zipcode']}}</h2>
 
 			<p> Vivamus ultrices luctus quam eu feugiat posuere pulvinar turpis quis interdum vulputate lobortis diam  lectus
 			ante ut urna malesuada, ultrices luctus maximus mollis feugiat accumsan aliquam vitae malesuada rutrum
@@ -13,42 +13,42 @@
 
 			<!-- INTRO BUTTONS -->
 			<div class="intro_button">
-				<a class="btn btn-tra" href="#">Learn more</a>
-				{{-- <a class="btn" href="#">Get started now</a> --}}
+				<a class="btn btn-tra" href="#details">Learn more</a>
 			</div>
 
 		</div>  <!-- END TEXT -->
-
 
 		<!-- INTRO REGISTER FORM -->
 		<div id="intro_form" class="col-md-5 form_register text-center">
 
 			<!-- Register Form -->
-			<form action="#" name="registerform" class="row" method="post">
+			{!! Form::open(['route' => ['inquire', $property['id']], 'name' => 'registerform', 'class' => 'row']) !!}
+
+				@if (Session::has('success_message'))
+					{{Session::get('success_message')}}
+				@endif
 
 				<h4>Sign up to find out more!</h4>
 
 				<div class="col-md-12">
-					<input class="form-control" type="text" name="first_name" placeholder="Enter your name">
+					{!! Form::text( 'first_name', null, ['class' => 'form-control', 'placeholder' => 'Enter your name']) !!}
 				</div>
 
 				<div class="col-md-12">
-					<input class="form-control" type="text" name="email" placeholder="Enter your email">
+					{!! Form::text( 'email', null, ['class' => 'form-control', 'placeholder' => 'Enter your email']) !!}
 				</div>
 
 				<div class="col-md-12">
-					<input class="form-control" type="text" name="phone" placeholder="Phone Number">
+					{!! Form::text( 'phone', null, ['class' => 'form-control', 'placeholder' => 'Phone Number']) !!}
 				</div>
 
 				<!-- Submit Button -->
 				<div id="form_register_btn" class="text-center">
-					<input class="btn" type="submit" value="Register Now">
+					{!! Form::submit('Inquire Now', ['class' => 'btn']) !!}
 				</div>
-
-			</form> <!-- End Register Form -->
+			{!! Form::close() !!}
 
 		</div>    <!-- END INTRO REGISTER FORM -->
-
 
 	</div>   <!-- End Intro Content -->
 </div>

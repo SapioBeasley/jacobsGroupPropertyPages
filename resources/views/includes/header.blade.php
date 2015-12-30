@@ -13,7 +13,7 @@
 			</button>
 
 			<!-- Logo Image -->
-			<a id="GoToHome" class="navbar-brand" href="#intro"><img src="img/logo.png" alt="logo"></a>
+			<a id="GoToHome" class="navbar-brand" href="#intro"><img src="{{asset('img/logo.png')}}" alt="logo"></a>
 
 		</div>  <!-- End Navigation Bar -->
 

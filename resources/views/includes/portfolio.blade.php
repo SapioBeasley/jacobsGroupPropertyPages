@@ -19,10 +19,10 @@
 				<div class="hover-overlay">
 
 					<!-- Image Link -->
-					<img class="img-responsive" src="img/portfolio/img5.jpg" alt="Portfolio Image">
+					<img class="img-responsive" src="{{asset('img/portfolio/img5.jpg')}}" alt="Portfolio Image">
 
 					<!-- Image Zoom -->
-					<a class="prettyPhoto image_zoom" href="img/portfolio/gallery_2x/img5.jpg" title="Portfolio Image">
+					<a class="prettyPhoto image_zoom" href="{{asset('img/portfolio/gallery_2x/img5.jpg')}}" title="Portfolio Image">
 						<div class="item-overlay">
 							<div class="overlay-content">
 								<h4 class="small-title">Enter Title Here</h4>
@@ -38,10 +38,10 @@
 				<div class="hover-overlay">
 
 					<!-- Image Link -->
-					<img class="img-responsive" src="img/portfolio/img3.jpg" alt="Portfolio Image">
+					<img class="img-responsive" src="{{asset('img/portfolio/img3.jpg')}}" alt="Portfolio Image">
 
 					<!-- Image Zoom -->
-					<a class="prettyPhoto image_zoom" href="img/portfolio/gallery_2x/img3.jpg" title="Portfolio Image">
+					<a class="prettyPhoto image_zoom" href="{{asset('img/portfolio/gallery_2x/img3.jpg')}}" title="Portfolio Image">
 						<div class="item-overlay">
 							<div class="overlay-content">
 								<h4 class="small-title">Enter Title Here</h4>
@@ -57,10 +57,10 @@
 				<div class="hover-overlay">
 
 					<!-- Image Link -->
-					<img class="img-responsive" src="img/portfolio/img2.jpg" alt="Portfolio Image">
+					<img class="img-responsive" src="{{asset('img/portfolio/img2.jpg')}}" alt="Portfolio Image">
 
 					<!-- Image Zoom -->
-					<a class="prettyPhoto image_zoom" href="img/portfolio/gallery_2x/img2.jpg" title="Portfolio Image">
+					<a class="prettyPhoto image_zoom" href="{{asset('img/portfolio/gallery_2x/img2.jpg')}}" title="Portfolio Image">
 						<div class="item-overlay">
 							<div class="overlay-content">
 								<h4 class="small-title">Enter Title Here</h4>
@@ -76,10 +76,10 @@
 				<div class="hover-overlay">
 
 					<!-- Image Link -->
-					<img class="img-responsive" src="img/portfolio/img4.jpg" alt="Portfolio Image">
+					<img class="img-responsive" src="{{asset('img/portfolio/img4.jpg')}}" alt="Portfolio Image">
 
 					<!-- Image Zoom -->
-					<a class="prettyPhoto image_zoom" href="img/portfolio/gallery_2x/img4.jpg" title="Portfolio Image">
+					<a class="prettyPhoto image_zoom" href="{{asset('img/portfolio/gallery_2x/img4.jpg')}}" title="Portfolio Image">
 						<div class="item-overlay">
 							<div class="overlay-content">
 								<h4 class="small-title">Enter Title Here</h4>
@@ -95,10 +95,10 @@
 				<div class="hover-overlay">
 
 					<!-- Image Link -->
-					<img class="img-responsive" src="img/portfolio/img7.jpg" alt="Portfolio Image">
+					<img class="img-responsive" src="{{asset('img/portfolio/img7.jpg')}}" alt="Portfolio Image">
 
 					<!-- Image Zoom -->
-					<a class="prettyPhoto image_zoom" href="img/portfolio/gallery_2x/img7.jpg" title="Portfolio Image">
+					<a class="prettyPhoto image_zoom" href="{{asset('img/portfolio/gallery_2x/img7.jpg')}}" title="Portfolio Image">
 						<div class="item-overlay">
 							<div class="overlay-content">
 								<h4 class="small-title">Enter Title Here</h4>
@@ -114,10 +114,10 @@
 				<div class="hover-overlay">
 
 					<!-- Image Link -->
-					<img class="img-responsive" src="img/portfolio/img8.jpg" alt="Portfolio Image">
+					<img class="img-responsive" src="{{asset('img/portfolio/img8.jpg')}}" alt="Portfolio Image">
 
 					<!-- Image Zoom -->
-					<a class="prettyPhoto image_zoom" href="img/portfolio/gallery_2x/img8.jpg" title="Portfolio Image">
+					<a class="prettyPhoto image_zoom" href="{{asset('img/portfolio/gallery_2x/img8.jpg')}}')}}" title="Portfolio Image">
 						<div class="item-overlay">
 							<div class="overlay-content">
 								<h4 class="small-title">Enter Title Here</h4>
