@@ -28,7 +28,7 @@
 */
 
 Route::group(['middleware' => 'web'], function () {
-	Route::get('/property/{addressSlug}', [
+	Route::get('/{addressSlug}', [
 	'as' => 'property.show',
 	'uses' => 'PropertiesController@show'
 ]);
@@ -40,32 +40,32 @@ Route::group(['middleware' => 'web'], function () {
 		'uses' => 'AdminController@index'
 	]);
 
-	Route::get('/admin/property/create', [
+	Route::get('/admin/create', [
 		'as' => 'property.create',
 		'uses' => 'AdminController@propertyCreate'
 	]);
 
-	Route::get('/admin/property/edit/{id}', [
+	Route::get('/admin/edit/{id}', [
 		'as' => 'property.edit',
 		'uses' => 'AdminController@propertyEdit'
 	]);
 
-	Route::post('/admin/property/store', [
+	Route::post('/admin/store', [
 		'as' => 'property.store',
 		'uses' => 'AdminController@propertyStore'
 	]);
 
-	Route::put('/admin/property/update/{id}', [
+	Route::put('/admin/update/{id}', [
 		'as' => 'property.update',
 		'uses' => 'AdminController@propertyUpdate'
 	]);
 
-	Route::delete('/admin/property/destroy/{id}', [
+	Route::delete('/admin/destroy/{id}', [
 		'as' => 'property.destroy',
 		'uses' => 'AdminController@propertyDestroy'
 	]);
 
-	Route::post('/property/{id}/upload', 'AdminController@upload');
+	Route::post('/{id}/upload', 'AdminController@upload');
 
 	Route::post('/inquire/{address}', [
 		'as' => 'inquire',
