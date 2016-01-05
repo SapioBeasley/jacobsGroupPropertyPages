@@ -45,7 +45,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="{{route('index')}}">
                     Jacobs Group Properties
                 </a>
             </div>
