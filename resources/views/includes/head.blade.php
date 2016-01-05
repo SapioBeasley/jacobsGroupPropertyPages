@@ -31,7 +31,7 @@
 
 <style type="text/css">
 	#intro {
-		background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(((url('/uploads/' . $property['slug'] . '.jpg');
+		background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{url('/uploads/' . $property['slug'] . '.jpg'}});
 		background-position: center;
 	}
 </style>
