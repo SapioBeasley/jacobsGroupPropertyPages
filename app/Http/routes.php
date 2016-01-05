@@ -65,7 +65,7 @@ Route::group(['middleware' => 'web'], function () {
 		'uses' => 'AdminController@propertyDestroy'
 	]);
 
-	Route::post('/{id}/upload', 'AdminController@upload');
+	Route::post('view/{id}/upload', 'AdminController@upload');
 
 	Route::post('/inquire/{address}', [
 		'as' => 'inquire',
