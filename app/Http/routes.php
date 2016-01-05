@@ -28,7 +28,7 @@
 */
 
 Route::group(['middleware' => 'web'], function () {
-	Route::get('/{addressSlug}', [
+	Route::get('view/{addressSlug}', [
 	'as' => 'property.show',
 	'uses' => 'PropertiesController@show'
 ]);
