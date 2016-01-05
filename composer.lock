@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e374d4025b0283e9c79be855b80e354",
-    "content-hash": "56ce1c84c449ae6024b8bed9be1e86b2",
+    "hash": "858f9c86dc89412e3c0751c77abb3cfe",
+    "content-hash": "fe5a8377e7192933b24565bc5b995c74",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -949,6 +949,56 @@
                 "shell"
             ],
             "time": "2015-11-12 16:18:56"
+        },
+        {
+            "name": "sapioweb/crudhelper",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SapioBeasley/crudHelper.git",
+                "reference": "1255de980e0003b3a46e354f7ef6f55a475e17c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SapioBeasley/crudHelper/zipball/1255de980e0003b3a46e354f7ef6f55a475e17c2",
+                "reference": "1255de980e0003b3a46e354f7ef6f55a475e17c2",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sapioweb\\CrudHelper\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Beasley",
+                    "email": "andreas@sapioweb.com"
+                }
+            ],
+            "description": "Helper provider to assist in general crud functions of a restful controller",
+            "keywords": [
+                "api",
+                "beasley",
+                "create",
+                "crud",
+                "delete",
+                "edit",
+                "google",
+                "helper",
+                "index",
+                "laravel",
+                "sapioweb",
+                "service provider",
+                "service providers",
+                "show",
+                "update"
+            ],
+            "time": "2016-01-03 01:50:30"
         },
         {
             "name": "spatie/laravel-tail",

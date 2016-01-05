@@ -7,9 +7,7 @@
 			<h2>{{$property['streetAddress']}}<br>
 			<span>{{$property['city']}} {{$property['state']}}</span> {{$property['zipcode']}}</h2>
 
-			<p> Vivamus ultrices luctus quam eu feugiat posuere pulvinar turpis quis interdum vulputate lobortis diam  lectus
-			ante ut urna malesuada, ultrices luctus maximus mollis feugiat accumsan aliquam vitae malesuada rutrum
-			</p>
+			<p> {{$property['property_description']}} </p>
 
 			<!-- INTRO BUTTONS -->
 			<div class="intro_button">

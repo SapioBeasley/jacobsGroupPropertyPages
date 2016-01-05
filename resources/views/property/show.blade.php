@@ -34,21 +34,21 @@
 
         <!-- STATISTIC BANNER
         ============================================= -->
-        <div id="statistic_banner">
+        {{-- <div id="statistic_banner">
             @include('includes.stats')
-        </div>
+        </div> --}}
 
 
         <!-- PORTFOLIO
         ============================================= -->
-        <section id="images">
+        {{-- <section id="images">
             @include('includes.portfolio')
-        </section>
+        </section> --}}
         <!-- CLIENTS
         ============================================= -->
-        <div id="clients">
+        {{-- <div id="clients">
             @include('includes.clients')
-        </div>
+        </div> --}}
 
         <!-- BOTTOM PROMO LINE
         ============================================= -->

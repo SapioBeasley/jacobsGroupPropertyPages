@@ -11,20 +11,40 @@
 	</div>
 
 	<div class="row price-row">
-
 		<div id="price_1" class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 			<div class="pricing-table">
 
 				<div style="color: #333;font-size: 15px;font-weight: 300;text-transform: uppercase;padding: 20px 40px;">
-					Vivamus ultrices luctus quam eu feugiat posuere pulvinar turpis quis interdum vulputate lobortis diam lectus ante ut urna malesuada, ultrices luctus maximus mollis feugiat accumsan aliquam vitae malesuada rutrum
+					{{$property['property_description']}}
 				</div>
 
 				<!-- Plan Features  -->
 				<ul class="features">
-					<li>Single Family</li>
-					<li>Views since listing: <strong>77</strong></li>
-					<li>Price/sqft: <strong>$115</strong></li>
-					<li>Floor size: <strong>1,310 sqft</strong></li>
+
+					@if (!empty($property['type']))
+					<li>{{$property['type']}}</li>
+					@endif
+
+					@if (!empty($property['beds']))
+					<li>Beds: <strong>{{$property['beds']}}</strong></li>
+					@endif
+
+					@if (!empty($property['baths']))
+					<li>Baths: <strong>{{$property['baths']}}</strong></li>
+					@endif
+
+					@if (!empty($property['sqft']))
+					<li>SQFT: <strong>{{$property['sqft']}}</strong></li>
+					@endif
+
+					@if (!empty($property['bultIn']))
+					<li>Built in: <strong>{{$property['bultIn']}}</strong></li>
+					@endif
+
+					@if (!empty($property['hoa']))
+					<li>HOA: <strong>{{$property['hoa']}}</strong></li>
+					@endif
+
 				</ul>
 
 				<div style="color: #333;font-size: 15px;font-weight: 300;text-transform: uppercase;padding: 0px 40px;">
@@ -33,7 +53,6 @@
 
 			</div>
 		</div>  <!-- END PRICE PLAN BASIC -->
-
 	</div>  <!-- END PRICING TABLES HOLDER -->
 
 </div>

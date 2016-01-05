@@ -40,14 +40,6 @@ Route::group(['middleware' => 'web'], function () {
 		'uses' => 'AdminController@index'
 	]);
 
-
-
-
-
-
-
-
-
 	Route::get('/admin/property/create', [
 		'as' => 'property.create',
 		'uses' => 'AdminController@propertyCreate'
@@ -73,19 +65,7 @@ Route::group(['middleware' => 'web'], function () {
 		'uses' => 'AdminController@propertyDestroy'
 	]);
 
-	Route::post('/upload', 'AdminController@upload');
-
-
-
-
-
-
-
-
-
-
-
-
+	Route::post('/property/{id}/upload', 'AdminController@upload');
 
 	Route::post('/inquire/{address}', [
 		'as' => 'inquire',

@@ -18,6 +18,13 @@ class Property extends Model
         'state',
         'zipcode',
         'streetAddress',
-        'image'
+        // 'image'
+        'property_description',
+        'type',
+        'beds',
+        'baths',
+        'sqft',
+        'bultIn',
+        'hoa',
     ];
 }

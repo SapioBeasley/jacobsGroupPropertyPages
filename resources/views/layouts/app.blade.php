@@ -85,25 +85,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="{{asset('js/dropzone.js')}}"></script>
 
-    <script type="text/javascript">
-        var baseUrl = "{{ url('/') }}";
-        var token = "{{ Session::getToken() }}";
-        Dropzone.autoDiscover = false;
-        var myDropzone = new Dropzone("div#dropzoneFileUpload", {
-            url: baseUrl+"/upload",
-            params: {
-                _token: token
-            }
-        });
-        Dropzone.options.myAwesomeDropzone = {
-            paramName: "file", // The name that will be used to transfer the file
-            maxFilesize: 200, // MB
-            addRemoveLinks: true,
-            accept: function(file, done) {
+    @if (isset($property))
+        <script type="text/javascript">
+            var baseUrl = "{{ route('property.show', $property['id']) }}";
+            var token = "{{ Session::getToken() }}";
+            Dropzone.autoDiscover = false;
+            var myDropzone = new Dropzone("div#dropzoneFileUpload", {
+                url: baseUrl + "/upload",
+                params: {
+                    _token: token
+                }
+            });
+            Dropzone.options.myAwesomeDropzone = {
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 200, // MB
+                addRemoveLinks: true,
+                accept: function(file, done) {
 
-            },
-        };
-    </script>
+                },
+            };
+        </script>
+    @endif
 
 </body>
 </html>

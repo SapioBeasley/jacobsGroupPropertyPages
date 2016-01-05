@@ -8,6 +8,8 @@ use App\Property;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Sapioweb\CrudHelper\CrudyController as CrudHelper;
+
 class AdminController extends Controller
 {
     /**
@@ -27,12 +29,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $properties = Property::all();
+        $properties = CrudHelper::index(new \App\Property);
 
-        return view('admin')
-            ->with([
-                'properties' => $properties,
-            ]);
+        return view('admin')->with([
+            'properties' => $properties
+        ]);
     }
 
     public function propertyCreate()
@@ -42,7 +43,7 @@ class AdminController extends Controller
 
     public function propertyEdit(Request $request, $id)
     {
-        $property = Property::find($id);
+        $property = CrudHelper::show(new \App\Property, 'id', $id);
 
         return view('property.edit')
             ->with([
@@ -52,7 +53,7 @@ class AdminController extends Controller
 
     public function propertyUpdate(Request $request, $id)
     {
-        $property = Property::where('id', '=', $id);
+        $property = CrudHelper::show(new \App\Property, 'id', $id);
 
         foreach ($request->all() as $key => $value) {
             $updateData[$key] = $value;
@@ -61,102 +62,50 @@ class AdminController extends Controller
         unset($updateData['_method']);
         unset($updateData['_token']);
 
-        $updateData['slug'] =  static::slugify($updateData['streetAddress'] . ' ' . $updateData['city'] . ' ' . $updateData['state'] . ' ' . $updateData['zipcode']);
-        $updateData['image'] = $request->cookie()['image'];
+        $updateData['slug'] =  CrudHelper::slugify($updateData['streetAddress'] . ' ' . $updateData['city'] . ' ' . $updateData['state'] . ' ' . $updateData['zipcode']);
 
         $property->update($updateData);
 
         return redirect()->route('property.edit', $property->first()->id)
-            ->with('success_message', 'Property Updated')->withCookie(\Cookie::forget('image'));
+            ->with('success_message', 'Property Updated');
     }
 
     public function propertyStore(Request $request)
     {
         $createData = $request->all();
 
-        $createData['slug'] = static::slugify($createData['streetAddress'] . ' ' . $createData['city'] . ' ' . $createData['state'] . ' ' . $createData['zipcode']);
-        $createData['image'] = $request->cookie()['image'];
+        $createData['slug'] = CrudHelper::slugify($createData['streetAddress'] . ' ' . $createData['city'] . ' ' . $createData['state'] . ' ' . $createData['zipcode']);
 
         $property = Property::create($createData);
 
         return redirect()->route('index')
-            ->with('success_message', 'New Property Added')->withCookie(\Cookie::forget('image'));
+            ->with('success_message', 'New Property Added');
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function propertyDestroy(Request $request, $id)
     {
-        $property = Property::find($id);
-
-        $property->delete();
+        $property = CrudHelper::destroy(new \App\Property, 'id', $id);
 
         return redirect()->back()
             ->with('success_message', 'Property Deleted');
     }
 
-    public function upload(Request $request)
+    public function upload(Request $request, $id)
     {
+        $property = CrudHelper::show(new \App\Property, 'id', $id);
+
         $destinationPath = 'uploads'; // upload path
         $extension = $request->file('file')->getClientOriginalExtension(); // getting file extension
-        $fileName = rand(11111, 99999) . '.' . $extension; // renameing image
+        $fileName = $property->slug . '.' . $extension; // renameing image
         $upload_success = $request->file('file')->move($destinationPath, $fileName); // uploading file to given path
 
         if ($upload_success) {
             return response()->json([
                 'success' => 200,
                 'image' => $fileName
-            ])->withCookie(cookie('image', $fileName, 4500));
+            ]);
         } else {
             return response()->json('error', 400);
         }
-    }
-
-    static public function slugify($text)
-    {
-        // replace non letter or digits by -
-        $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
-
-        // trim
-        $text = trim($text, '-');
-
-        // transliterate
-        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
-
-        // lowercase
-        $text = strtolower($text);
-
-        // remove unwanted characters
-        $text = preg_replace('~[^-\w]+~', '', $text);
-
-        if (empty($text))
-        {
-            return 'n-a';
-        }
-
-        return $text;
     }
 }
