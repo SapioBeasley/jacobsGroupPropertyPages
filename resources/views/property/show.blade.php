@@ -4,12 +4,6 @@
 
 @section('content')
 
-    <!-- PRELOADER
-    ============================================= -->
-    <div class="animationload">
-        <div class="loader"></div>
-    </div>
-
     <!-- HEADER
     ============================================= -->
     <header id="header">
@@ -68,4 +62,4 @@
     ============================================= -->
     @include('includes.scripts')
 
-@section('content')
+@endsection

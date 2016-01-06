@@ -11,6 +11,13 @@
 	</head>
 
 	<body>
+
+		<!-- PRELOADER
+		============================================= -->
+		<div class="animationload">
+		    <div class="loader"></div>
+		</div>
+
 		@yield('content')
 	</body>
 
