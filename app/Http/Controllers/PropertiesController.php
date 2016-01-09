@@ -30,7 +30,7 @@ class PropertiesController extends Controller
 		return view('property.show')
 			->with([
 				'property' => $property,
-				'featuredImage' => $featuredImage
+				'featuredImage' => isset($featuredImage) ? $featuredImage : null
 			]);
 	}
 
