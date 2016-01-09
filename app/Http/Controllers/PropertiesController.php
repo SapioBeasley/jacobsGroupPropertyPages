@@ -7,21 +7,30 @@ use Illuminate\Http\Request;
 use App\Property;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Sapioweb\CrudHelper\CrudyController as CrudHelper;
 
 class PropertiesController extends Controller
 {
 	public function show(Request $request, $addressSlug)
 	{
-		$property = Property::where('slug', '=', $addressSlug);
+       	$property = CrudHelper::show(new \App\Property, 'slug', $addressSlug, ['images']);
 		$property = $property->first();
 
 		if ($property !== null) {
 			$property = $property->toArray();
 		}
 
+		foreach ($property['images'] as $images) {
+
+			if ($images['featured'] == 1) {
+				$featuredImage = $images;
+			}
+		}
+
 		return view('property.show')
 			->with([
 				'property' => $property,
+				'featuredImage' => $featuredImage
 			]);
 	}
 

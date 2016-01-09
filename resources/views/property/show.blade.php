@@ -32,12 +32,12 @@
             @include('includes.stats')
         </div> --}}
 
-
         <!-- PORTFOLIO
         ============================================= -->
-        {{-- <section id="images">
+        <section id="images">
             @include('includes.portfolio')
-        </section> --}}
+        </section>
+
         <!-- CLIENTS
         ============================================= -->
         {{-- <div id="clients">
