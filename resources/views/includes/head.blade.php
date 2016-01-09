@@ -29,9 +29,11 @@
 <!-- Google Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
+@if (isset($featuredImage['url']))
 <style type="text/css">
 	#intro {
 		background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{url($featuredImage['url'])}});
 		background-position: center;
 	}
 </style>
+@endif

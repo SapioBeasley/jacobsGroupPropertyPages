@@ -13,8 +13,7 @@ class PropertiesController extends Controller
 {
 	public function show(Request $request, $addressSlug)
 	{
-       	$property = CrudHelper::show(new \App\Property, 'slug', $addressSlug, ['images']);
-		$property = $property->first();
+       	$property = CrudHelper::show(new \App\Property, 'slug', $addressSlug, ['images'])->first();
 
 		if ($property !== null) {
 			$property = $property->toArray();
@@ -30,7 +29,7 @@ class PropertiesController extends Controller
 		return view('property.show')
 			->with([
 				'property' => $property,
-				'featuredImage' => isset($featuredImage) ? $featuredImage : null
+				'featuredImage' => isset($featuredImage) ? $featuredImage : []
 			]);
 	}
 
