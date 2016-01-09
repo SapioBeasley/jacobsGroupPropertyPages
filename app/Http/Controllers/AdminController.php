@@ -98,7 +98,7 @@ class AdminController extends Controller
 
     public function upload(Request $request, $id)
     {
-        $property = CrudHelper::show(new \App\Property, 'id', $id);
+        $property = CrudHelper::show(new \App\Property, 'id', $id)->first()
 
         $destinationPath = 'uploads/property/' . $id; // upload path
         $extension = $request->file('file')->getClientOriginalExtension(); // getting file extension
