@@ -2,6 +2,8 @@
 
 namespace App;
 
+// use App\Image;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
@@ -27,4 +29,12 @@ class Property extends Model
         'bultIn',
         'hoa',
     ];
+
+    /**
+     * Get the imaes for the property.
+     */
+    public function images()
+    {
+        return $this->belongsToMany('App\Image');
+    }
 }

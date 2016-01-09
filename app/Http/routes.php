@@ -71,4 +71,14 @@ Route::group(['middleware' => 'web'], function () {
 		'as' => 'inquire',
 		'uses' => 'PropertiesController@inquire',
 	]);
+
+	Route::delete('/admin/destroy/image/{id}', [
+		'as' => 'image.destroy',
+		'uses' => 'AdminController@imageDestroy'
+	]);
+
+	Route::put('/admin/update/featured-image/{id}', [
+		'as' => 'makeImageFeatured',
+		'uses' => 'AdminController@makeImageFeatured'
+	]);
 });
