@@ -26,7 +26,7 @@
 					{{Session::get('success_message')}}
 				@endif
 
-				<h4>Sign up to find out more!</h4>
+				<h4>Request More information!</h4>
 
 				<div class="col-md-12">
 					{!! Form::text( 'first_name', null, ['class' => 'form-control', 'placeholder' => 'Enter your name']) !!}
