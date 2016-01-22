@@ -72,6 +72,11 @@ Route::group(['middleware' => 'web'], function () {
 		'uses' => 'PropertiesController@inquire',
 	]);
 
+	Route::get('/inquire/success', [
+		'as' => 'inquire.success',
+		'uses' => 'PropertiesController@inquireSuccess',
+	]);
+
 	Route::delete('/admin/destroy/image/{id}', [
 		'as' => 'image.destroy',
 		'uses' => 'AdminController@imageDestroy'

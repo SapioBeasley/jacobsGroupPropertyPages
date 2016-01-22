@@ -18,7 +18,30 @@
 		    <div class="loader"></div>
 		</div>
 
-		@yield('content')
+		<!-- HEADER
+		============================================= -->
+		<header id="header">
+		    @include('includes.header')
+		</header>
+
+		<!-- PAGE CONTENT WRAPPER
+		============================================= -->
+		<div id="content_wrapper">
+
+			@yield('content')
+
+			<!-- FOOTER
+			============================================= -->
+			<footer id="footer">
+				@include('includes.footer')
+			</footer>
+
+		</div>
+
+		<!-- EXTERNAL SCRIPTS
+		============================================= -->
+		@include('includes.scripts')
+
 	</body>
 
 </html>

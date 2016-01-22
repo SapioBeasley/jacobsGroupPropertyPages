@@ -47,7 +47,7 @@ class AdminController extends Controller
         $property = CrudHelper::show(new \App\Property, 'id', $id, ['images']);
 
         if ($property !== null) {
-            $property = $property->first()->toArray();
+            $property = $property->toArray();
         }
 
         return view('property.edit')
@@ -98,7 +98,7 @@ class AdminController extends Controller
 
     public function upload(Request $request, $id)
     {
-        $property = CrudHelper::show(new \App\Property, 'id', $id)->first();
+        $property = CrudHelper::show(new \App\Property, 'id', $id);
 
         $destinationPath = 'uploads/property/' . $id; // upload path
         $extension = $request->file('file')->getClientOriginalExtension(); // getting file extension
@@ -124,7 +124,7 @@ class AdminController extends Controller
     {
         $imageToBe = CrudHelper::show(new \App\Image, 'id', $id);
 
-        $imageNotToBe = CrudHelper::show(new \App\Image, 'featured', 1)->first();
+        $imageNotToBe = CrudHelper::show(new \App\Image, 'featured', 1);
 
         if ($imageNotToBe !== null) {
 

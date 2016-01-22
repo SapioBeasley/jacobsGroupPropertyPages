@@ -4,16 +4,6 @@
 
 @section('content')
 
-    <!-- HEADER
-    ============================================= -->
-    <header id="header">
-        @include('includes.header')
-    </header>
-
-    <!-- PAGE CONTENT WRAPPER
-    ============================================= -->
-    <div id="content_wrapper">
-
         <!-- INTRO
         ============================================= -->
         <section id="intro">
@@ -28,9 +18,9 @@
 
         <!-- STATISTIC BANNER
         ============================================= -->
-        {{-- <div id="statistic_banner">
+        <div id="statistic_banner">
             @include('includes.stats')
-        </div> --}}
+        </div>
 
         <!-- PORTFOLIO
         ============================================= -->
@@ -49,17 +39,5 @@
         <div id="inquire">
             @include('includes.bottomLine')
         </div>
-
-        <!-- FOOTER
-        ============================================= -->
-        <footer id="footer">
-            @include('includes.footer')
-        </footer>
-
-    </div>
-
-    <!-- EXTERNAL SCRIPTS
-    ============================================= -->
-    @include('includes.scripts')
 
 @endsection

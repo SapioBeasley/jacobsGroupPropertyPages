@@ -41,11 +41,15 @@ class PropertiesController extends Controller
 		$data = array_merge($property, $request->all());
 
 		\Mail::send('email.inquire', $data, function ($m) use ($data) {
-			$m->from(env('INQUIRE_EMAIL', 'andreas@sapioweb.com'), 'Your Application');
+			$m->from(env('INQUIRE_EMAIL', 'andreas@sapioweb.com'), 'Jacobs Group Properties');
 			$m->to(env('INQUIRE_EMAIL', 'andreas@sapioweb.com'), $data['first_name'])->subject('New Property Inquire!');
         	});
 
-		return redirect()->back()
-			->with('success_message', 'Your Inquire has been sent, thank you');
+		return redirect()->route('inquire.success');
+	}
+
+	public function inquireSuccess()
+	{
+		return view('property.success');
 	}
 }
